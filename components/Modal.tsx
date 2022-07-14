@@ -1,10 +1,20 @@
 import { XIcon } from "@heroicons/react/outline"
 import MuiModal from "@mui/material/Modal"
+import { useEffect, useState } from "react"
 import { useRecoilState } from "recoil"
 import { modalState } from "../atoms/modalAtom"
+import { Movie } from "../typings"
 
 function Modal() {
     const [ showModal, setShowModal] = useRecoilState(modalState)
+    const [movie, setMovie] = useState<Movie | null>(null)
+
+    useEffect(() => {
+        if(!movie) return 
+
+
+    }, [])
+    
 
     const handleClose = () => {
         setShowModal(false)
